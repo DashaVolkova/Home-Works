@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<body>
+  <script type="text/javascript">
+
+
+    var operand1 = +prompt('Введите первый операнд', ''); //без этого плюса у меня были строчные данные и числа 1+2 добавлялись, как 12, а не как 3.
+    var operand2 = +prompt('Введите второй операнд', '');
+    var operation = prompt('Введите необходимую операцию', '')
+        if (operation == 'сумма') {
+          var sum = function(operand1,operand2) {
+          return operand1+operand2;
+          };
+          alert (sum (operand1,operand2));
+        }
+        if (operation == 'вычетание') {
+          var sub = function(operand1,operand2) {
+          return operand1-operand2;
+          };
+          alert (sub (operand1,operand2));
+        }
+        if (operation == 'деление') {
+          var div = function(operand1,operand2) {
+          return operand1/operand2;
+          };
+          alert (div (operand1,operand2));
+        }
+        if (operation == 'умножение') {
+          var mul = function(operand1,operand2) {
+          return operand1*operand2;
+          };
+          alert (mul (operand1,operand2));
+        }
+        /*if (operation == 'факториал') {                           НЕ ЗНАЮ, как сделать факториал. Во-первых, у нас вводится два значения, во-вторых, даже если было                                                         одно из них, то не представляю, как бы можно было бы произвести эту операцию.
+          var fac = function(operand1,operand2) {
+          return operand1*operand2;
+          };
+          alert (fac (operand1,operand2));
+        }*/
+
+
+  </script>
+</body>
+</html>

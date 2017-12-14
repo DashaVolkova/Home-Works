@@ -1,0 +1,54 @@
+<html>
+	<head>
+		  <script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div id="container"></div>
+		<button>button</button>
+		<script type="text/javascript">
+			$.ajax({
+				url:'test.txt',
+				dataType: 'text',
+				success: function(data) {
+					$('#container').html(data);
+				}
+			})
+
+			var button = $('button');
+			button.click();
+
+		</script>
+
+		/*<!-- <script type="text/javascript">
+			function ajaxdoc() {
+
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function() {
+					if(this.readystate == 4 && this.status == 200) {
+						document.querySelector('#container').innerHTML = this.responsetext
+					}
+				}
+
+				xhr.open('GET', 'test.txt', true); //пока будет выполнятся этот код, то запрос будет асинхронным.
+				xhr.sent();
+			}
+			var button = document.querySelector('button');
+			button.addEventListener('click', ajaxdoc);
+
+
+		// Следующее верно для библиотеки jQuery
+			$.ajax({
+				url: "test.txt",
+				beforeSent: function() {
+					//что-то делаем...
+				}
+				success: function(data) {
+					alert
+				}
+				error : function() {
+					//что-то делаем...
+				}
+			})
+		</script> -->*/
+	</body>
+</html>

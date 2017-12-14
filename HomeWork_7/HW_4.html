@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/template.css"/>
+  <meta charset="utf-8">
+</head>
+
+<body>
+<div class="content">
+  <div class="sub-content">
+    <button class="accordion">О нас</button>
+    <div class="panel">
+      <p>Какой-нибудь замечательный текст...</p>
+   </div>
+
+    <button class="accordion">Услуги</button>
+    <div class="panel">
+      <p>Какой-нибудь замечательный текст...</p>
+    </div>
+
+    <button class="accordion">Портфолио</button>
+    <div class="panel">
+      <p>Какой-нибудь замечательный текст...</p>
+    </div>
+
+    <button class="accordion">Контакты</button>
+    <div class="panel">
+      <p>Какой-нибудь замечательный текст...</p>
+    </div>
+  </div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "1px";
+    }
+  }
+}
+</script>
+</body>
+
+</html>
+

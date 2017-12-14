@@ -1,0 +1,163 @@
+// Navigations
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>HW_9</title>
+  <link rel="stylesheet" href="css/template.css"/>
+ /*<!--  <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/myScript.js"></script> -->*/
+  <style type="text/css">
+	nav {
+		height: 35px;
+	}
+	nav > ul > li {
+		display: flex;
+		background-color: grey;
+		color: white;
+	}
+
+	nav > ul > li > a {
+		display: block;
+		padding: 30px;
+	}
+
+	ul > li {
+		list-style-type: none;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.submenu {
+		background-color: blue;
+		padding: 0;
+		display: none;
+	}
+
+	.submenu a {
+		display: block;
+		padding: 5px;
+	}
+
+	.nav-second {
+		margin-top: 300px;
+	}
+  </style>
+</head>
+<body>
+	<nav class="nav-first">
+		<ul>
+			<li><a href="#">Item 1</a></li>
+			<li>
+				<a href="#">Item 2</a>
+				<ul class="submenu">
+					<li><a href="#">Sub-item 3</a>
+						<nav class="nanomenu">
+							<ul>
+								<li>
+									<a href="#"></a>
+								</li>
+							</ul>
+						</nav>
+					</li>
+					<li><a href="#">Sub-item 3</a></li>
+					<li><a href="#">Sub-item 3</a></li>
+					<li><a href="#">Sub-item 3</a></li>
+					<li><a href="#">Sub-item 3</a></li>
+					<li><a href="#">Sub-item 3</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Item 3</a></li>
+			<li><a href="#">Item 4</a></li>
+			<li><a href="#">Item 5</a></li>
+			<li><a href="#">Item 6</a></li>
+			<li><a href="#">Item 7</a></li>
+		</ul>
+	</nav>
+	<nav class="nav-second">
+		<ul>
+			<li><a href="#">Item 1</a></li>
+			<li>
+				<a href="#">Item 2</a>
+				<ul class="submenu">
+					<li><a href="#">Sub-item 3</a></li>
+					<li><a href="#">Sub-item 3</a></li>
+					<li><a href="#">Sub-item 3</a></li>
+					<li><a href="#">Sub-item 3</a></li>
+					<li><a href="#">Sub-item 3</a></li>
+					<li><a href="#">Sub-item 3</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Item 3</a></li>
+			<li><a href="#">Item 4</a></li>
+			<li><a href="#">Item 5</a></li>
+			<li><a href="#">Item 6</a></li>
+			<li><a href="#">Item 7</a></li>
+		</ul>
+	</nav>
+<script type="text/javascript">
+	$('.nav-first ul>ul>li>a').mouseenter(function(){
+		var submenu = $(this).next('.submenu');
+
+// проверяем  в JQuery есть ли вообще такой элемент, и чтобы если его нет, то никаких действий не происходило.
+		if(submenu.length > 0) {
+			submenu.show();
+		}
+	});
+
+	$('.nav-first ul>ul>li').mouseleave(function(){
+		var submenu = $('.submenu');
+
+		if(submenu.length > 0) {
+			setTimeout(function() {
+
+			})
+			submenu.hide();
+		}
+	});
+
+	$('.nav-second>ul>li>a').click(function(){
+		var submenu = $(this).next('.submenu');
+
+		if(submenu.length > 0) {
+/*			setTimeout(function() {
+				submenu.toggle();
+			}, 500); */
+			submenu.toggle();
+		}
+	})
+
+	/*$(window).click(function(){
+		$('.submenu').hide)();
+	});*/ // это не сработает, потому что при клике будет закрываться все. Даже если открыто не было.
+
+	$('.nav-second>ul>li').click(function(e){
+		e.stopPropagation();
+	});
+
+	$('.submenu>li>a').mouseenter(function(){
+		$(this).next$('nanomenu').show().animate({
+			left:300},
+			500,
+			slideOf),
+		})
+	});
+
+	function slideOf() {
+		$('nanomenu').animate({
+			left: 0,
+		},
+			500,
+			function(){
+				$('nanomenu').hide();
+			}
+		})
+
+	}
+
+</script>
+
+</body>

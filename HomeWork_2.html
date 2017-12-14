@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<script>
+// Можно ли сделать первым путем то же самое? Можно ли в свойство массива записать функцию?
+/*  var operand1 = +prompt('Введите первый операнд', '');
+  var operand2 = +prompt('Введите второй операнд', '');
+  var operation = prompt('Введите необходимую операцию', '');
+  var calculator = {
+    sum: +'сумма',
+    sub: 'отнимание',
+    mul: 'умножение',
+    div: 'деление',
+  };
+  console.log(calculator);
+  if(operation == 'сумма') {
+    calculator.sum = operand1+operand2;
+    }
+    console.log(calculator.sum);
+*/
+/*
+  var numbers = [];
+  while (true) {
+    var value = prompt("Введите число", '');
+    if (value === "" || value === null || isNaN(value)) break;
+    numbers.push(+value);
+  }
+  console.log(numbers);
+  var operation = prompt('Введите необходимую операцию', '');
+
+if (operation == 'сумма') {
+    var sum = 0;
+    for (var i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+    }
+}
+  console.log( sum );
+
+if (operation == 'вычетание') {
+  var sub = 0; // вот тут это работает только для двух чисел из массива, но как сделать для всех чисел, я так  и не разобралась. То же самое - для / и *
+  for (var i = 0; i < numbers.length; i++) {
+    sub = numbers[0] - numbers[i];
+  }
+}
+  console.log( sub );
+// после введения выпадает четыре разных варианта, один из которых показывает ответ, а два показывают undefined, почему?
+if (operation == 'деление') {
+  var div = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    div = numbers[0]/numbers[i];
+  }
+}
+  console.log( div );
+
+if (operation == 'умножение') {
+  var mul = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    mul = numbers[0]*numbers[i];
+  }
+}
+
+  console.log( mul );
+*/
+
+// ДОМАШНЕЕ ЗАДАНИЕ:
+function () {
+  function _sum() { //Нижнее подчеркивание - это чтобы объяснить другим разработчикам, что это функция для внутренного пользования
+    var result = 0;
+      for(var i = 0; i<arguments.length; i++) {
+        result+=arguments[i];
+      }
+    return result;
+   }
+   return {
+    sum:_sum
+   }
+
+   function _multi() { //Нижнее подчеркивание - это чтобы объяснить другим разработчикам, что это функция для внутренного пользования
+    var result = 1;
+      for(var i = 0; i<arguments.length; i++) {
+        result+=arguments[i];
+      }
+    return result;
+   }
+   return {
+    sum:_sum,
+    multi: _multi
+   }
+}
+
+var myCalc = calculator ();
+
+console.log(calculator.sum(1,2,4))
+console.log(calculator.multi(1,2,4))
+
+
+  </script>
+</body>
+</html>

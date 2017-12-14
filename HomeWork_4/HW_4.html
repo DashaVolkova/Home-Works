@@ -1,0 +1,58 @@
+<!--
+1. Как изменять высоту, если используешь скрипт scrollheight?
+2. Что это вообще за переметр и как можно было решить задание другим способом?
+3. Я в тегах использовала в итоге bottom, но до этого пробовала испотзовать li, вообще беда вышла со всем этим. МОжет ли это быть потому что li - подразумеваеи инлайновый элемент?  -->
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/template.css"/>
+  <meta charset="utf-8">
+</head>
+
+<body>
+<div class="content">
+  <div class="sub-content">
+    <button class="accordion">О нас</button>
+    <div class="panel">
+      <p>Какой-нибудь замечательный текст...</p>
+   </div>
+
+    <button class="accordion">Услуги</button>
+    <div class="panel">
+      <p>Какой-нибудь замечательный текст...</p>
+    </div>
+
+    <button class="accordion">Портфолио</button>
+    <div class="panel">
+      <p>Какой-нибудь замечательный текст...</p>
+    </div>
+
+    <button class="accordion">Контакты</button>
+    <div class="panel">
+      <p>Какой-нибудь замечательный текст...</p>
+    </div>
+  </div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "1px";
+    }
+  }
+}
+</script>
+</body>
+
+</html>
+
