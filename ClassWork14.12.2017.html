@@ -1,0 +1,88 @@
+<script type="text/javascript">
+
+
+
+	function registration() {
+		$.ajax {
+			url: '',
+			dataType: 'json',
+			data: {
+				login: $('[name='login']'),
+				password:
+			},
+			success: function (data) {
+				console.log(data);
+				$('.login.form').show();
+				$('.registration.form').hide();
+			},
+			error: function(xhr, status, error {
+				console.log('ERROR!!!', xhr, status, error);
+			})
+		}
+	};
+
+	function login() {
+		$.ajax {
+			url: '',
+			dataType: 'json',
+			data: {
+				username: $('[name='username']').val(),
+				password: $('[name='password']').val(),
+			},
+			success: function (data) {
+				console.log(data);
+
+				window.location.reload(); //чтобы посмотреть при загрузке страницы, есть  ли уже наш токен. Если есть, то загружаем нашу страницу профайла, если нет, то отправляем на повторное поле ввода  пароля и логина.
+			},
+			error: function(xhr, status, error {
+				console.log('ERROR!!!', xhr, status, error);
+			})
+
+			complete: function() {
+				$('[name="login"]').html('Login');
+			}
+		}
+	}
+
+	function initPage() {
+		if(sessionStorage.sessionToken){
+			showProfile();
+		} else {
+			showLogin();
+		}
+	}
+
+	function showProfile() {
+		$.ajax {
+			url: '',
+			dataType: 'json',
+			headers: {
+				bearer: sessionStorage.sessionToken,
+			}
+			data: {
+				username: $('[name='username']'),
+				password: $('[name='password']'),
+			},
+			success: function (data) {
+				console.log(data);
+				$('.profile').show();
+				window.location.reload(); //чтобы посмотреть при загрузке страницы, есть  ли уже наш токен. Если есть, то загружаем нашу страницу профайла, если нет, то отправляем на повторное поле ввода  пароля и логина.
+			},
+			error: function(xhr, status, error {
+				console.log('ERROR!!!', xhr, status, error);
+			})
+		}
+	}
+
+	function showLogin() {
+		$('.login>form').show();
+	}
+
+	function logout() {
+		if(sessionStorage.sessionToken) {
+			delete sessionStorage.sessionToken;
+			window.location.reload();
+		}
+	}
+
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>HW_9</title>
+  <link rel="stylesheet" href="css/template.css"/>
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/myScript.js"></script>
+</head>
+<body>
+  <section>
+    <div class="form form-registration" style="display: none;">
+      <div class="img-conteiner"><img class="" width="96" heigth="96" src="img/avatar_2x.png"></div>
+      <form class="form-signin" data-type="registration" data-role="validator">
+        <input type="text" class="" placeholder="Login" name="login">
+        <input type="email" class="user-email" placeholder="Email" name="email">
+        <input type="password" class="user-password" placeholder="Password" name="password">
+        <input type="password" class="repete-user-password" placeholder="Repete your password" >
+        <br>
+        <button class="submission" name="register" type="button">Registration</button>
+      </form>
+      <br>
+      <a href="login" class="back">Return to login</a>
+    </div>
+    <div class="form form-login" style="display: none;">
+      <div class="img-conteiner"><img class="" width="96" heigth="96" src="img/avatar_2x.png"></div>
+      <form class="form-signin">
+        <input type="text" class="" placeholder="Login" name="username">
+        <input type="password" class="user-password" placeholder="Password" name="password">
+        <br>
+        <button class="submission" name="login-button" type="button">Login</button>
+      </form>
+      <br>
+      <a href="registration" class="back">Are you new? <b>Create an account</b></a>
+    </div>
+    <div class="profile" style="display: none;">
+        <p>Hello, <b class="profile-name">Username</b></p>
+        <p>Nice to see you again!</p>
+        <p><button type="button" name="logout" class="logout">Logout</button></p>
+    </div>
+    <div class="alerts-block"></div>
+  </section>
+</body>
+</html>

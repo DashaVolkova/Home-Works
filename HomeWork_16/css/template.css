@@ -1,0 +1,82 @@
+body {
+	background: #f4f8fb;
+}
+
+.form {
+	width: 362px;
+	margin: 100px auto;
+	border: 2px solid #d7d8da;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background: #f7f7f7;
+	padding-left: 46px;
+	padding-bottom: 35px;
+}
+
+.img-conteiner {
+	width: 96px;
+	height: 96px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin: 40px 131px 36px 85px;
+}
+
+input, .submission, .logout {
+	display: block;
+	width: 268px;
+	height: 44px;
+	border: 1px solid #d2d2d2;
+	box-sizing: border-box;
+	margin: 0 47px 14px 1px;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+input {
+	padding-left: 10px;
+	outline: none;
+}
+
+.submission, .logout {
+	color: white;
+	border: none;
+	height: 36px;
+	background: #5bb85d;
+}
+
+.back {
+	color: #798c92;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.back:hover {
+	color: #046c06;
+	text-decoration: underline;
+}
+
+.submission:hover, .logout:hover {
+	background: #368f38;
+	transition: 0.2s;
+}
+
+input:focus {
+	border: 1px solid #1c029f;
+	box-shadow: none;
+}
+
+.profile {
+	font-size: 18px;
+}
+
+
+/* $(document).on('change','input.user-password',function(){
+	    if(input.val().length < 6) {
+	      input.css('background','#FF0000');
+	      return false;
+	    }
+	    else {
+	      input.css('background','#FFFFFF');
+	      return true;
+	    }
+	  }); */
